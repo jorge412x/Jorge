@@ -1,8 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpModule } from "@angular/http";
+
 //Rutas
 import { app_routing } from "./app.routes";
+
+//servicios
+import { InformacionService } from "./services/informacion.service";
+
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -11,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PortafolioComponent } from './components/portafolio/portafolio.component';
 import { AboutComponent } from './components/about/about.component';
 import { ItemComponent } from './components/item/item.component';
+
 
 
 @NgModule({
@@ -22,11 +29,14 @@ import { ItemComponent } from './components/item/item.component';
     AboutComponent,
     ItemComponent
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
+    HttpModule,
     app_routing
   ],
-  providers: [],
+  providers: [
+    InformacionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
