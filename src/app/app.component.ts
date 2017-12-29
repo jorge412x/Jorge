@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { InformacionService } from './services/informacion.service';
+import { ProductosService } from './services/productos.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +11,8 @@ import { InformacionService } from './services/informacion.service';
 })
 export class AppComponent {
 
-constructor( public _is:InformacionService ){
+constructor( public _is:InformacionService,
+             public _ps:ProductosService ){
   
 }
 
