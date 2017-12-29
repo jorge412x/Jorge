@@ -21,6 +21,7 @@ this.http.get('https://paginaweb-bea4b.firebaseio.com/productos_idx.json')
 
 console.log( res.json()  );
 this.cargando = false;
+this.productos = res.json();
 });
 
   }
