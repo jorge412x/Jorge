@@ -1,4 +1,6 @@
+import { ProductosService } from '../../services/productos.service';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -7,8 +9,19 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent{
 
-  constructor() { }
+  termino:string = undefined;
 
+  constructor( private route:ActivatedRoute,
+              private _ps:ProductosService) { 
 
+    route.params.subscribe( parametros=>{
+
+      this.termino = parametros['termino'];
+      console.log(this.termino);
+
+      _ps.buscar_producto( this.termino )
+    });
+
+  }
 
 }
